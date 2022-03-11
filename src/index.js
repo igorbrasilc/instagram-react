@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
-import Navbar from "./Navbar";
-import Corpo from "./Corpo";
-import FundoMobile from "./FundoMobile";
+import Navbar from "./components/Navbar";
+import Corpo from "./components/Corpo";
+import FundoMobile from "./components/FundoMobile";
 
 function App() {
     return (

@@ -1,50 +1,19 @@
-import Fundo from "./Fundo";
+import Post from "./Post";
+
+const conteudos = [
+{imgTopo: "./assets/img/meowed.svg", usuarioTopo: "barked", imgConteudo: "./assets/img/gato-telefone.svg",
+imgFundo: "./assets/img/respondeai.svg", usuarioFundo: "respondeai", qtdCurtidas: "101.523"},
+{imgTopo: "./assets/img/barked.svg", usuarioTopo: "meowed", imgConteudo: "./assets/img/dog.svg",
+imgFundo: "./assets/img/adorable_animals.svg", usuarioFundo: "adorable_animals", qtdCurtidas: "99.159"}
+]
 
 export default function Posts() {
     return (
     <div class="posts">
-      <div class="post">
-        <Topo img="./assets/img/meowed.svg" usuario="meowed" />
-        <Conteudo img="./assets/img/gato-telefone.svg" />
-        <Fundo img="./assets/img/respondeai.svg" usuario="respondeai" quantidade="101.523"/>
-      </div>
-      <div class="post">
-        <Topo img="./assets/img/barked.svg" usuario="barked" />
-        <Conteudo img="./assets/img/dog.svg" />
-        <Fundo img="./assets/img/adorable_animals.svg" usuario="adorable_animals" quantidade="99.159"/>
-      </div>        
+      {conteudos.map(conteudo =>
+      <Post imgTopo={conteudo.imgTopo} usuarioTopo={conteudo.usuarioTopo} imgConteudo={conteudo.imgConteudo}
+      imgFundo={conteudo.imgFundo} usuarioFundo={conteudo.usuarioFundo} qtdCurtidas={conteudo.qtdCurtidas} />
+      )}      
     </div>
     )
-}
-
-// function Post(props) {
-//   return (
-//     <div class="post">
-//       <Topo img="./assets/img/meowed.svg" usuario="meowed" />
-//       <Conteudo img="./assets/img/gato-telefone.svg" />
-//       <Fundo img="./assets/img/respondeai.svg" usuario="respondeai" quantidade="101.523"/>
-//     </div>
-//   )
-// }
-
-function Topo(props) {
-  return (
-    <div class="topo">
-        <div class="usuario">
-          <img src={props.img} />
-          {props.usuario}
-        </div>
-        <div class="acoes">
-          <ion-icon name="ellipsis-horizontal"></ion-icon>
-        </div>
-      </div>
-  )
-}
-
-function Conteudo(props) {
-  return (
-    <div class="conteudo">
-      <img src={props.img} />
-    </div>
-  )
 }
